@@ -1,27 +1,23 @@
-<!doctype html>
-<html lang="en" BGCOLOR="black">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" href="app.webp" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="darkreader-lock" />
-		<title>Webleste</title>
-		<meta property="og:title" content="Webleste" />
-		<meta
-			property="og:description"
-			content="Celeste (2018) and Everest running entirely within the browser, powered by WebAssembly (WASM)."
-		/>
-		<meta
-			name="description"
-			content="Celeste (2018) and Everest running entirely within the browser, powered by WebAssembly (WASM)."
-		/>
-		<link rel="canonical" href="https://celeste.r58playz.dev" />
-		<script src="https://a.r58playz.dev/colonthree.js" data-website-id="0c64d81c-78c2-49c4-8bb9-fe01f46083a5" data-before-send="processEvent"></script>
-		<script type="module" crossorigin src="./assets/index-D6y0v75m.js"></script>
-		<link rel="stylesheet" crossorigin href="./assets/index-C4OZP-O4.css">
-	</head>
+<!DOCTYPE html>
+<html lang="en">
 
-	<body>
-		<div id="app"></div>
-	</body>
+<head>
+    <script src="coi-serviceworker.js"></script>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+	
+    <title>COI</title>
+    <script src="./coi-serviceworker.js"></script>
+</head>
+
+<body>
+    <h1>coi-serviceworker</h1>
+
+    <script>
+        const el = document.createElement("div")
+        el.innerHTML = `Cross origin isolated: ${window.crossOriginIsolated ? "✅" : "❌"}`
+        document.body.append(el);
+    </script>
+</body>
+
 </html>
