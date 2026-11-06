@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <!-- Keep the service worker right at the top -->
     <script src="coi-serviceworker.js"></script>
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-	
-    <title>COI</title>
-    <script src="./coi-serviceworker.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webleste</title>
 </head>
-
 <body>
-    <h1>coi-serviceworker</h1>
+    <!-- The game mounts its interface inside a root or container element -->
+    <div id="app"></div>
+    <div id="root"></div>
 
-    <script>
-        const el = document.createElement("div")
-        el.innerHTML = `Cross origin isolated: ${window.crossOriginIsolated ? "✅" : "❌"}`
-        document.body.append(el);
-    </script>
+    <!-- This links back to your original Webleste javascript loader -->
+    <script type="module" src="./index-D6y0v75m.js"></script>
 </body>
-
 </html>
