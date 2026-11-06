@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Keep the service worker right at the top -->
+    <!-- 1. Fixes the multi-threading security headers -->
     <script src="coi-serviceworker.js"></script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webleste</title>
-</head>
-<body>
-    <!-- The game mounts its interface inside a root or container element -->
-    <div id="app"></div>
-    <div id="root"></div>
 
-    <!-- This links back to your original Webleste javascript loader -->
+    <!-- 2. Re-injects the required fonts and framework styles -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Renogare&display=swap" rel="stylesheet">
+    
+    <!-- 3. Forces the page to style correctly even if local CSS is missing -->
+    <script src="https://tailwindcss.com"></script>
+    <style>
+        body { background-color: #1a1a1a; color: #ffffff; font-family: sans-serif; }
+    </style>
+</head>
+<body class="bg-[#121214] text-white min-h-screen flex flex-col items-center justify-center m-0 overflow-hidden">
+    
+    <!-- Webleste mounts its main visual components inside this specific div -->
+    <div id="root" class="w-full h-full min-h-screen flex flex-col items-center justify-center"></div>
+
+    <!-- 4. Boots the game script -->
     <script type="module" src="./assets/index-D6y0v75m.js"></script>
 </body>
 </html>
