@@ -1,30 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- 1. Fixes the multi-threading security headers -->
+    <!-- Fixes the multi-threading security headers -->
     <script src="coi-serviceworker.js"></script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webleste</title>
 
-    <!-- 2. Re-injects the required fonts and framework styles -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Renogare&display=swap" rel="stylesheet">
-    
-    <!-- 3. Forces the page to style correctly even if local CSS is missing -->
+    <!-- Native script styling to prevent Cross-Origin font blocks -->
     <script src="https://tailwindcss.com"></script>
     <style>
-        body { background-color: #1a1a1a; color: #ffffff; font-family: sans-serif; }
+        body { background-color: #1a1a1a; color: #ffffff; margin: 0; padding: 0; overflow: hidden; }
     </style>
 </head>
-<body class="bg-[#121214] text-white min-h-screen flex flex-col items-center justify-center m-0 overflow-hidden">
+<body class="bg-[#121214] text-white min-h-screen">
     
-    <!-- Webleste mounts its main visual components inside this specific div -->
-    <div id="root" class="w-full h-full min-h-screen flex flex-col items-center justify-center"></div>
+    <!-- Webleste builds require both an 'app' and a 'root' wrapper for dreamland.js to inject into -->
+    <div id="app"></div>
+    <main id="root"></main>
 
-    <!-- 4. Boots the game script -->
+    <!-- Boots the main game script -->
     <script type="module" src="./assets/index-D6y0v75m.js"></script>
 </body>
 </html>
